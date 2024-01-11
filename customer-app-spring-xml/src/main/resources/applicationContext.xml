@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans.xsd">
+						
+	<bean id="customerRepository" class="com.demo.repository.InMemoryCustomerRepositoryImpl" />
+		
+	<bean id="customerService" class="com.demo.service.CustomerServiceImpl" autowire="byName">
+	
+		<!-- Constructor Arguments based Dependency Injection -->
+		<!-- constructor-arg name="customerRepository" ref="customerRepository"></constructor-arg-->
+		
+		<!-- Setter based Dependency Injection -->
+		<!-- property name="customerRepository" ref="customerRepository"></property-->
+		
+		<!-- Dependency Injection using Autowiring: use autowire keyword inside bean tag, you need default constructor for this-->
+		<!-- autowire by type: using setter method -->
+		<!-- autowire by constructor: using constructor -->
+		<!-- autowire by name: using setter method (bean id is the name - class should have a setter with same name as this name)-->
+		
+	</bean>
+</beans>
+  
